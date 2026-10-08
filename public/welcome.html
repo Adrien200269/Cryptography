@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Protected Lab Dashboard | Cryptography Lab</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="lab-title">
+        <span>🛡️</span>
+        <span>Secure Auth Lab</span>
+      </div>
+      <div class="security-badge">
+        <span>🔒</span>
+        <span>Authenticated Session</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="auth-card welcome-card">
+      <div class="card-header">
+        <h1>Authenticated Dashboard</h1>
+        <p>Demonstrating Server-Side AES-256-GCM Decryption</p>
+      </div>
+
+      <div id="loadingBox" style="text-align: center; padding: 20px; color: var(--text-muted);">
+        Decrypting your identity from MongoDB ciphertext...
+      </div>
+
+      <div id="contentBox" style="display: none;">
+        <div class="user-badge">
+          <h3>Decrypted Identity:</h3>
+          <div id="userEmail" class="email-display">Loading...</div>
+        </div>
+
+        <div class="crypto-proof">
+          <strong>Cryptographic Verification:</strong><br>
+          • <strong>At Rest:</strong> Your email was stored in MongoDB strictly as AES-256-GCM ciphertext (<code>iv:authTag:ciphertext</code>).<br>
+          • <strong>In Transit:</strong> Your credentials traveled inside TLS 1.2+ encrypted records.<br>
+          • <strong>Authentication:</strong> Successfully looked up via HMAC-SHA256 blind index and verified against bcrypt cost 12 hash.<br>
+          • <strong>Decryption:</strong> Decrypted on the server using AES_KEY and transmitted securely over HTTPS.
+        </div>
+
+        <div style="display: flex; gap: 12px; justify-content: flex-end;">
+          <button id="logoutBtn" class="btn-primary" style="width: auto; padding: 10px 24px;">Sign Out</button>
+        </div>
+      </div>
+
+      <div id="errorBox" class="alert error" style="display: none;"></div>
+    </div>
+  </main>
+
+  <script src="/js/welcome.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure Login | Cryptography Lab</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="lab-title">
+        <span>🛡️</span>
+        <span>Secure Auth Lab</span>
+      </div>
+      <div class="security-badge">
+        <span>🔒</span>
+        <span>TLS 1.2+ Enforced</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="auth-card">
+      <div class="card-header">
+        <h1>Sign In</h1>
+        <p>Protected by Blind Indexing & Timing Mitigation</p>
+      </div>
+
+      <div id="alertBox" class="alert"></div>
+
+      <form id="loginForm" novalidate>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="student@university.edu" required autocomplete="email">
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="••••••••••••" required autocomplete="current-password">
+        </div>
+
+        <button type="submit" id="submitBtn" class="btn-primary">Sign In</button>
+      </form>
+
+      <div class="auth-footer">
+        Don't have an account? <a href="/signup.html">Create one here</a>
+      </div>
+
+      <div class="crypto-pills">
+        <span class="pill">Blind Index Query</span>
+        <span class="pill">Dummy bcrypt Compare</span>
+        <span class="pill">HttpOnly Secure Cookie</span>
+        <span class="pill">Rate Limited</span>
+      </div>
+    </div>
+  </main>
+
+  <script src="/js/login.js"></script>
+</body>
+</html>

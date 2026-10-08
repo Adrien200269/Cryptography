@@ -1,0 +1,42 @@
+{
+  "name": "secure-auth-lab",
+  "version": "1.0.0",
+  "description": "University Cryptography Lab - Secure Authentication System with HTTPS, AES-256-GCM, HMAC Blind Index, bcrypt, and MongoDB",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "demo:insecure": "node demo-insecure-server.js",
+    "generate-keys": "node scripts/generate-keys.js",
+    "generate-cert": "node scripts/generate-cert.js",
+    "show-db": "node scripts/show-db.js",
+    "show-indexes": "node scripts/show-indexes.js",
+    "tls-info": "node scripts/tls-info.js",
+    "generate-pdf": "node scripts/generate-pdf.js"
+  },
+  "keywords": [
+    "cryptography",
+    "aes-256-gcm",
+    "blind-index",
+    "bcrypt",
+    "tls",
+    "mongodb",
+    "express"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "connect-mongo": "^6.0.0",
+    "dotenv": "^18.0.6",
+    "express": "^5.2.1",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^8.7.1",
+    "express-session": "^1.19.0",
+    "helmet": "^8.3.0",
+    "mongoose": "^9.11.1",
+    "validator": "^13.15.35"
+  },
+  "devDependencies": {
+    "md-to-pdf": "^5.2.5"
+  }
+}

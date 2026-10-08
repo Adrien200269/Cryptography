@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure Signup | Cryptography Lab</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="lab-title">
+        <span>🛡️</span>
+        <span>Secure Auth Lab</span>
+      </div>
+      <div class="security-badge">
+        <span>🔒</span>
+        <span>TLS 1.2+ Enforced</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="auth-card">
+      <div class="card-header">
+        <h1>Create Secure Account</h1>
+        <p>AES-256-GCM Encrypted & Blind Indexed</p>
+      </div>
+
+      <div id="alertBox" class="alert"></div>
+
+      <form id="signupForm" novalidate>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="student@university.edu" required autocomplete="email">
+          <div class="input-hint">Will be encrypted with AES-256-GCM and indexed via HMAC-SHA256.</div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="••••••••••••" required autocomplete="new-password">
+          <div class="input-hint">Min 10 chars, uppercase, lowercase, number, symbol.</div>
+        </div>
+
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" placeholder="••••••••••••" required autocomplete="new-password">
+        </div>
+
+        <button type="submit" id="submitBtn" class="btn-primary">Register Account</button>
+      </form>
+
+      <div class="auth-footer">
+        Already registered? <a href="/login.html">Sign in here</a>
+      </div>
+
+      <div class="crypto-pills">
+        <span class="pill">AES-256-GCM</span>
+        <span class="pill">HMAC-SHA256 Blind Index</span>
+        <span class="pill">bcrypt Cost 12</span>
+        <span class="pill">HSTS & Helmet</span>
+      </div>
+    </div>
+  </main>
+
+  <script src="/js/signup.js"></script>
+</body>
+</html>
